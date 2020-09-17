@@ -1,26 +1,67 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import RecipesPage from './Components/RecipesPage/RecipesPage'
+import './App.css'
+import { Route } from 'react-router-dom'
+import Header from './Components/Header/Header'
+import { getAllRecipes } from './APIRequests'
+import DrinkDetailsPage from './Components/DrinkDetailsPage/DrinkDetailsPage'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      allDrinks: [],
+      error: '',
+      drinkId: 0
+    }
+    this.getDrinkDetails = this.getDrinkDetails.bind(this)
+  }
+
+  async componentDidMount() {
+    try {
+      const recipes = await getAllRecipes()
+      this.setState({ allDrinks: recipes.drinks })
+    } catch (error) {
+      this.setState({ error: error })
+    }
+    console.log(this.state.allDrinks)
+  }
+
+  getDrinkDetails(id) {
+    // let idNum = +id
+    this.setState({ drinkId: id })
+    console.log(this.state.drinkId)
+  }
+
+  render() {
+    return (
+      <main>
+        <Header />
+        <Route
+          exact path = "/"
+          render={() => {
+            return (
+              <RecipesPage
+                allDrinks={this.state.allDrinks}
+                getDrinkDetails={this.getDrinkDetails}
+              />
+            )
+          }}
+        />
+        <Route
+          exact path={`/drink-details/${this.state.drinkId}`}
+          render={() => {
+            return (
+              <DrinkDetailsPage 
+                drinkId={this.state.drinkId}
+              />
+            )
+          }}
+        />
+        
+      </main>
+    )
+  }
 }
 
-export default App;
+export default App

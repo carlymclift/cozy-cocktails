@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: solid 1px black;
+}
+
+.nav-buttons {
+  color: black;
+  font-size: 1.5em;
+  text-decoration: none;
+  margin: 80px 30px 80px 35px;
+}
+
+.title-text {
+  color: black;
+  font-size: 3em;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.nav-box {
+  margin-top: 30px;
+}
