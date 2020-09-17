@@ -1,5 +1,6 @@
 import React from 'react'
 import './Bottles.css'
+import ReactTooltip from 'react-tooltip';
 
 const Bottles = () => {
   let bottles = [
@@ -7,7 +8,7 @@ const Bottles = () => {
     'gin', 
     'absinthe', 
     'tequila', 
-    'peppermint', 
+    'peppermint-schnapps', 
     'whiskey', 
     'sambuca', 
     'irish-cream',
@@ -21,7 +22,10 @@ const Bottles = () => {
 
   const bottleButtons = bottles.map(bottle => {
       return (
-        <div className={bottle} id="bottles"></div>
+        <>
+          <div className={bottle} data-tip={bottle} id="bottles"></div>
+          <ReactTooltip type="info"/>
+        </>
       )
   })
 

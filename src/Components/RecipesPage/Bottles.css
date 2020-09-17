@@ -1,18 +1,18 @@
 .bottle-sec {
-    display: flex;
-    flex-direction: row;
-    height: 2000px;
-    width: 900px;
-    /* background-color: aqua; */
-  
+  display: flex;
+  flex-direction: row;
+  height: 110px;
+  width: 900px;
+  border: solid 1px black;
+  border-radius: 10px;
+  margin: 20px;
   }
   
   #bottles {
     display: flex;
     flex-direction: column;
-    /* height: 100px;
-    width: 100px; */
-    height: 200px;
+    height: 100px;
+    width: 100px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -23,11 +23,6 @@
   }
   
   .vodka {
-    height: 100px;
-    width: 100px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
     background-image: url(../../assets/vodka.png);
   }
   
@@ -43,7 +38,7 @@
     background-image: url(../../assets/tequila.png);
   }
   
-  .peppermint {
+  .peppermint-schnapps {
     background-image: url(../../assets/peppermint-schnapps.png);
   }
   
