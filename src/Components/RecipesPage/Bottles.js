@@ -1,4 +1,5 @@
 import React from 'react'
+import './Bottles.css'
 
 const Bottles = () => {
   let bottles = [
