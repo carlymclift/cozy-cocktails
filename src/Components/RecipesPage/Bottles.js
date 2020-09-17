@@ -24,7 +24,7 @@ const Bottles = () => {
   const bottleButtons = bottles.map(bottle => {
       return (
         <>
-          <div className={bottle} data-tip={bottle} id="bottles" key={shortid.generate()}></div>
+          <div className={bottle} data-tip={bottle} id="bottles" role='button' key={shortid.generate()}></div>
           <ReactTooltip type="info"/>
         </>
       )
