@@ -28,7 +28,9 @@ class App extends Component {
   }
 
   getDrinkDetails(id) {
-    this.setState({ drinkId: id})
+    // let idNum = +id
+    this.setState({ drinkId: id })
+    console.log(this.state.drinkId)
   }
 
   render() {
@@ -47,9 +49,12 @@ class App extends Component {
           }}
         />
         <Route
-          exact path={`/drink-details/${this.state.drinkId}`} render={() => {
+          exact path={`/drink-details/${this.state.drinkId}`}
+          render={() => {
             return (
-              <DrinkDetailsPage />
+              <DrinkDetailsPage 
+                drinkId={this.state.drinkId}
+              />
             )
           }}
         />

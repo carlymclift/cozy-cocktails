@@ -11,8 +11,10 @@ class DrinkDetailsPage extends Component {
 
   async componentDidMount() {
     try {
+      console.log(this.props.drinkId)
       const drink = await getIndividualDrinkDetails(this.props.drinkId)
-      this.setState({ drink: drink.drinks })
+      console.log(drink)
+      this.setState({ drink: drink.drinks[0] })
     } catch (error) {
       this.setState({ error: error })
     }

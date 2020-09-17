@@ -5,10 +5,11 @@ import './RecipesPage.css'
 import PropTypes from 'prop-types'
 
 class RecipesPage extends Component {
-//   constructor(props) {
-//    super(props)
-//   }
+  constructor(props) {
+   super(props)
+  }
   render() {
+    // console.log(this.props)
     return (
       <section className="main-section">
         <Bottles />
