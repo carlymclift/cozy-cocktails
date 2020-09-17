@@ -1,0 +1,88 @@
+.bottle-sec {
+  display: flex;
+  flex-direction: row;
+  height: 2000px;
+  width: 900px;
+  /* background-color: aqua; */
+
+}
+
+#bottles {
+  display: flex;
+  flex-direction: column;
+  /* height: 100px;
+  width: 100px; */
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.bottle-labels {
+  margin-left: 20px;
+}
+
+.vodka {
+  height: 100px;
+  width: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../../assets/vodka.png);
+}
+
+.gin {
+  background-image: url(../../assets/gin.png);
+}
+
+.absinthe {
+  background-image: url(../../assets/absinthe.png);
+}
+
+.tequila {
+  background-image: url(../../assets/tequila.png);
+}
+
+.peppermint {
+  background-image: url(../../assets/peppermint-schnapps.png);
+}
+
+.whiskey {
+  background-image: url(../../assets/whiskey.png);
+}
+
+.sambuca {
+  background-image: url(../../assets/sambuca.png);
+}
+
+.irish-cream {
+  background-image: url(../../assets/irish-cream.png);
+}
+
+.everclear {
+  background-image: url(../../assets/everclear.png);
+}
+
+.rum {
+  background-image: url(../../assets/rum.png);
+}
+
+.red-wine {
+  background-image: url(../../assets/red-wine.png);
+}
+
+.rum-cream {
+  background-image: url(../../assets/rum-cream.png);
+}
+
+.champagne {
+  background-image: url(../../assets/champagne.png);
+}
+
+.vermouth {
+  background-image: url(../../assets/vermouth.png);
+}
+
+.triple-sec {
+  background-image: url(../../assets/triple-sec.png);
+}
