@@ -1,8 +1,8 @@
 import React from 'react'
-import './RecipesPage.scss'
-import PropTypes from 'prop-types'
+import './'
 
-let bottles = [
+const Bottles = () => {
+  let bottles = [
     'vodka', 
     'gin', 
     'absinthe', 
@@ -17,9 +17,8 @@ let bottles = [
     'champagne',
     'vermouth',
     'triple-sec'
-]
+  ]
 
-const Bottles = () => {
   const bottleButtons = bottles.map(bottle => {
       return (
         <div className={bottle} id="bottles"></div>
