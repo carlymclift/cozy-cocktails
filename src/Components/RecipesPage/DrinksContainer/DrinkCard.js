@@ -4,12 +4,10 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 const DrinkCard = ({ idDrink, strDrink, strDrinkThumb, getDrinkDetails }) => {
-  console.log(idDrink)
   let id = +idDrink
-  console.log(id)
   return (
-    <Link style={{ textDecoration: 'none' }} to={`drink-details/${id}`}>
-      <div role="button" className="Drink-Card" key={idDrink} onClick={() => getDrinkDetails(id)}>
+    <Link style={{ textDecoration: 'none' }} to={`drink-details/${id}`} className="card-box">
+      <div role="button" key={idDrink} className="Drink-Card" onClick={() => getDrinkDetails(id)}>
         <h2>{strDrink}</h2>
         <img className="Drink-card-image" alt="Drink" src={strDrinkThumb} />
       </div>

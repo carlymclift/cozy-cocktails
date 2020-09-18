@@ -1,0 +1,26 @@
+.drink-container {
+  height: 65%;
+  width: 700px;
+  display: grid;
+  grid-gap: 1%;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: auto;
+}
+
+.Drink-Card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px black;
+  font-size: 10px;
+  height: 220px;
+  width: 200px;
+  padding: none;
+}
+
+.Drink-card-image {
+  height: auto;
+  width: 80%;
+  margin: 0;
+}
