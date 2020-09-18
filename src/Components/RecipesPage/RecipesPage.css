@@ -1,7 +1,74 @@
 .main-section {
-  /* background-color: black; */
   display: flex;
-  justify-content: center;
-  height: 100vh;
+  flex-direction: column;
+  align-items: center;
 }
 
+.banner-background {
+  height: 700px;
+  width: 100%;
+}
+
+.banner-heading {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  color: black;
+  margin-bottom: 20%;
+  margin-left: 10%;
+  font-size: 50px;
+}
+
+.featured-drink-box {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 400px;
+  background-color: White;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 5em;
+  margin-right: 3em;
+  border-radius: 5px;
+}
+
+.featured-drink-container {
+  position: relative;
+}
+
+.featured-drink-text-one {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.featured-drink-text-two {
+  font-size: 17px;
+  margin-top: 2px;
+  color: grey;
+}
+
+.featured-drink-image{
+  height: 70%;
+  width: auto;
+  box-shadow: -1px 0px 21px 1px rgba(0,0,0,0.75);
+  background-image: url(../../assets/featured-drink.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-heading-text-one {
+  margin-bottom: 10px;
+}
+
+.banner-heading-text-two {
+  margin: 0;
+}
+
+.find-your-favor-heading {
+  font-size: 50px;
+}
