@@ -24,13 +24,10 @@ class App extends Component {
     } catch (error) {
       this.setState({ error: error })
     }
-    console.log(this.state.allDrinks)
   }
 
   getDrinkDetails(id) {
-    // let idNum = +id
     this.setState({ drinkId: id })
-    console.log(this.state.drinkId)
   }
 
   render() {

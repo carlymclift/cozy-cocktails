@@ -1,6 +1,7 @@
 import React from 'react'
 import './Bottles.css'
-import ReactTooltip from 'react-tooltip';
+import ReactTooltip from 'react-tooltip'
+const shortid = require('shortid')
 
 const Bottles = () => {
   let bottles = [
@@ -22,10 +23,10 @@ const Bottles = () => {
 
   const bottleButtons = bottles.map(bottle => {
       return (
-        <>
-          <div className={bottle} data-tip={bottle} id="bottles"></div>
+        <div key={shortid.generate()}>
+          <div className={bottle} data-tip={bottle} id="bottles" role='button' ></div>
           <ReactTooltip type="info"/>
-        </>
+        </div>
       )
   })
 

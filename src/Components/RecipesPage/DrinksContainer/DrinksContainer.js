@@ -13,7 +13,7 @@ const DrinksContainer = ({ allDrinks, getDrinkDetails }) => {
     )
   })
   return (
-    <div>
+    <div className="drink-container">
       {drinkCards}
     </div>
   )
