@@ -8,7 +8,8 @@
   margin: 20px;
   overflow: auto;
   box-shadow: -1px 0px 21px 1px rgba(0,0,0,0.75);
-  background-color: rgba(17, 24, 32, 0.986);
+  /* background-color: rgba(17, 24, 32, 0.986); */
+  background-color: rgb(240, 249, 255);
   }
   
   #bottles {
@@ -71,8 +72,8 @@
     background-image: url(../../assets/red-wine.png);
   }
   
-  .rum_cream {
-    background-image: url(../../assets/rum-cream.png);
+  .brandy {
+    background-image: url(../../assets/brandy.png);
   }
   
   .champagne {
@@ -97,6 +98,6 @@
     margin-top: 20%;
   }
 
-  .peppermint_schnapps {
-    background-image: url(../../assets/peppermint-schnapps.png);
+  .scotch {
+    background-image: url(../../assets/scotch.png);
   }

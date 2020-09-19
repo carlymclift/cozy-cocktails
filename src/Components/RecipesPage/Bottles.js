@@ -15,12 +15,12 @@ const Bottles = ({ searchByIngredient }) => {
     'irish_cream',
     'rum',
     'red_wine',
-    'rum_cream',
+    'brandy',
     'champagne',
     'dry_vermouth',
     'sweet_vermouth',
     'triple_sec',
-    'peppermint_schnapps'
+    'scotch'
   ]
 
   const bottleButtons = bottles.map(bottle => {
