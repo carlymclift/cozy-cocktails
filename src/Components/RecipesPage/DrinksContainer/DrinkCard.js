@@ -8,9 +8,9 @@ const DrinkCard = ({ idDrink, strDrink, strDrinkThumb, getDrinkDetails }) => {
   return (
     <Link style={{ textDecoration: 'none' }} to={`drink-details/${id}`} className="card-box">
       <div role="button" key={idDrink} className="Drink-Card" onClick={() => getDrinkDetails(id)}>
-        <h2>{strDrink}</h2>
         <img className="Drink-card-image" alt="Drink" src={strDrinkThumb} />
       </div>
+      <h2 className="drink-name-text">{strDrink}</h2>
     </Link>
   )
 }
