@@ -1,20 +1,21 @@
 .bottle-sec {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   height: 150px;
-  width: 1100px;
-  border: solid 1px black;
+  width: auto;
   border-radius: 10px;
   margin: 20px;
   overflow: auto;
+  box-shadow: -1px 0px 21px 1px rgba(0,0,0,0.75);
+  background-color: rgba(17, 24, 32, 0.986);
   }
   
   #bottles {
     display: flex;
     flex-direction: column;
-    height: 100px;
-    width: 100px;
-    margin-top: 15px;
+    height: 100%;
+    width: 80px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -38,10 +39,12 @@
   
   .tequila {
     background-image: url(../../assets/tequila.png);
+    height: 70% !important;
+    margin-top: 15%;
   }
   
-  .peppermint-schnapps {
-    background-image: url(../../assets/peppermint-schnapps.png);
+  .everclear {
+    background-image: url(../../assets/everclear.png);
   }
   
   .whiskey {
@@ -52,7 +55,7 @@
     background-image: url(../../assets/sambuca.png);
   }
   
-  .irish-cream {
+  .irish_cream {
     background-image: url(../../assets/irish-cream.png);
   }
   
@@ -64,11 +67,11 @@
     background-image: url(../../assets/rum.png);
   }
   
-  .red-wine {
+  .red_wine {
     background-image: url(../../assets/red-wine.png);
   }
   
-  .rum-cream {
+  .rum_cream {
     background-image: url(../../assets/rum-cream.png);
   }
   
@@ -76,10 +79,24 @@
     background-image: url(../../assets/champagne.png);
   }
   
-  .vermouth {
+  .dry_vermouth {
     background-image: url(../../assets/vermouth.png);
+    height: 80% !important;
+    margin-top: 15%;
   }
   
-  .triple-sec {
+  .sweet_vermouth {
+    background-image: url(../../assets/sweet_vermouth.png);
+    /* height: 75% !important;
+    margin-top: 20%; */
+  }
+
+  .triple_sec {
     background-image: url(../../assets/triple-sec.png);
+    height: 75% !important;
+    margin-top: 20%;
+  }
+
+  .peppermint_schnapps {
+    background-image: url(../../assets/peppermint-schnapps.png);
   }
