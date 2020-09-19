@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { getIndividualDrinkDetails } from '../../APIRequests'
+import Ingredients from './Ingredients'
+import Instructions from './Instructions'
 import './DrinkDetailsPage.css'
 
 class DrinkDetailsPage extends Component {
@@ -53,9 +55,10 @@ class DrinkDetailsPage extends Component {
       <div className="Drink-details-page">
         <div className="Drink-details-text-sec">
           <h2>{this.state.drink.strDrink}</h2>
-          <p>Glass to use: {this.state.drink.strGlass}</p>
-          <p>{this.state.drink.strInstructions}</p>
-          <Ingredients />
+          <Ingredients ingredients={this.state.ingredients}/>
+          {this.state.drink.strInstructions &&
+            <Instructions instructions={this.state.drink.strInstructions} />
+          }
         </div>
         <div className="drink-details-image-card">
           <img className="Drink-details-image" alt="Drink" src={this.state.drink.strDrinkThumb} />
