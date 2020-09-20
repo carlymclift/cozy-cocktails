@@ -13,6 +13,7 @@ class RecipesPage extends Component {
     super()
     this.state = {
       allDrinks: [],
+      featuredDrink: {},
       error: ''
     }
   }
@@ -21,6 +22,17 @@ class RecipesPage extends Component {
     try {
       const recipes = await getAllRecipes()
       this.setState({ allDrinks: recipes.drinks })
+    } catch (error) {
+      this.setState({ error: error })
+    }
+    this.getFeaturedDrink('archbishop')
+  }
+
+  getFeaturedDrink = async (drinkName) => {
+    try {
+      const result = await getRecipesBySearch(drinkName)
+      console.log(result)
+      this.setState({ featuredDrink: result.drinks[0] })
     } catch (error) {
       this.setState({ error: error })
     }
@@ -56,7 +68,7 @@ class RecipesPage extends Component {
   render() {
     return (
       <section className="main-section">
-        <Banner />
+        <Banner getDrinkDetails={this.props.getDrinkDetails} featuredDrink={this.state.featuredDrink} />
         <p className="find-your-favor-heading">Find Your Flavor</p>
         <p>filter by:</p>
         <Bottles searchByIngredient={this.searchByIngredient} />
