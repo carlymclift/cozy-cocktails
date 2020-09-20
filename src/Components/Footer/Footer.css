@@ -6,17 +6,10 @@
   justify-self: end;
   align-items: center;
   margin-top: -200px;
-  /* border-top: solid 2px black; */
   background-color: rgb(231, 245, 253);
   height: 200px;
   width: 100%;
   flex-shrink: 0;;
   position: relative;
   bottom: 0;
-  /* left: 0; */
-  /* position: static; */
 }
-
-/* .footer-text {
-
-} */
