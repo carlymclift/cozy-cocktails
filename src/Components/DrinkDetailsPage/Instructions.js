@@ -1,9 +1,10 @@
 import React from 'react'
 import './DrinkDetailsPage.css'
+import PropTypes from 'prop-types'
+
 const shortid = require('shortid')
 
 const Instructions = ({ instructions }) => {
-  console.log(instructions.split('.'))
   let x = instructions.split('.')
   x.pop()
   const instructionsList = x.map(instruction => {
@@ -16,6 +17,10 @@ const Instructions = ({ instructions }) => {
       {instructionsList}
     </ol>
   )
-} 
+}
+
+Instructions.propTypes = {
+  instructions: PropTypes.string
+}
 
 export default Instructions
