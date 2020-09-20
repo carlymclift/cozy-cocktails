@@ -28,7 +28,7 @@ const Bottles = ({ searchByIngredient }) => {
   const bottleButtons = bottles.map(bottle => {
       return (
         <div key={shortid.generate()}>
-          <div className={bottle} data-tip={bottle} id="bottles" role='button' onClick={() => searchByIngredient(bottle)}></div>
+          <div className={bottle} data-tip={bottle} id="bottles" role='button' onClick={() => searchByIngredient('/filter.php?i=', bottle)}></div>
           <ReactTooltip type="light"/>
         </div>
       )
