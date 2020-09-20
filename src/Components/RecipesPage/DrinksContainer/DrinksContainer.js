@@ -20,7 +20,7 @@ const DrinksContainer = ({ allDrinks, getDrinkDetails }) => {
     )
   } else {
     return (
-      <h2>there are currently no drinks that match</h2>
+      <h2>no drinks match, please search for something else</h2>
     )
   }
 }

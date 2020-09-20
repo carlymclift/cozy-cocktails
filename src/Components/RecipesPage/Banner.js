@@ -1,19 +1,24 @@
 import React from 'react'
 import './RecipesPage.css'
+import { Link } from 'react-router-dom'
 
-const Banner = () => {
+const Banner = ({ getDrinkDetails, featuredDrink }) => {
+  let id = +featuredDrink.idDrink
+
   return (
     <div className="featured-drink-container">
       <img className="banner-background" alt="Drink" src="https://images.unsplash.com/photo-1530578294319-9d6b376c11ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2879&q=80" ></img>
       <div className="banner-heading">
         <p className="banner-heading-text-one">featured drink:</p>
-        <h2 className="banner-heading-text-two">archbishop</h2>
+        <h2 className="banner-heading-text-two">{featuredDrink.strDrink}</h2>
       </div>
-      <div className="featured-drink-box">
+      <Link style={{ textDecoration: 'none' }} to={`drink-details/${id}`}>
+      <div className="featured-drink-box" onClick={ () => getDrinkDetails(id) }>
         <p className="featured-drink-text-one">Ingredients:</p>
         <p className="featured-drink-text-two">gin, wine, benedictine, lime</p>
         <div className="featured-drink-image"></div>
       </div>
+      </Link>
     </div>
   )
 }
