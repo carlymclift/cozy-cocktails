@@ -1,6 +1,8 @@
 import React from 'react'
 import './Bottles.css'
 import ReactTooltip from 'react-tooltip'
+import PropTypes from 'prop-types'
+
 const shortid = require('shortid')
 
 const Bottles = ({ searchByIngredient }) => {
@@ -37,6 +39,10 @@ const Bottles = ({ searchByIngredient }) => {
       {bottleButtons}
     </div>
   )
+}
+
+Bottles.propTypes = {
+  searchByIngredient: PropTypes.func
 }
 
 export default Bottles

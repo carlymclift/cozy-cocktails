@@ -2,6 +2,7 @@ import React from 'react'
 import './RecipesPage.css'
 import { Link } from 'react-router-dom'
 import ReactTooltip from 'react-tooltip'
+import PropTypes from 'prop-types'
 
 const Banner = ({ getDrinkDetails, featuredDrink }) => {
   let id = +featuredDrink.idDrink
@@ -25,6 +26,11 @@ const Banner = ({ getDrinkDetails, featuredDrink }) => {
       </ReactTooltip>
     </div>
   )
+}
+
+Banner.propTypes = {
+  getDrinkDetails: PropTypes.func,
+  featuredDrink: PropTypes.object
 }
 
 export default Banner

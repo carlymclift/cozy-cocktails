@@ -11,13 +11,13 @@ class App extends Component {
     super()
     this.state = {
       error: '',
-      drinkId: 0
+      selectedDrinkId: 0
     }
     this.getDrinkDetails = this.getDrinkDetails.bind(this)
   }
 
   getDrinkDetails(id) {
-    this.setState({ drinkId: id })
+    this.setState({ selectedDrinkId: id })
   }
 
   render() {
@@ -36,11 +36,11 @@ class App extends Component {
           }}
         />
         <Route
-          exact path={`/drink-details/${this.state.drinkId}`}
+          exact path={`/drink-details/${this.state.selectedDrinkId}`}
           render={() => {
             return (
               <DrinkDetailsPage 
-                drinkId={this.state.drinkId}
+                selectedDrinkId={this.state.selectedDrinkId}
               />
             )
           }}

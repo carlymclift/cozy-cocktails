@@ -1,5 +1,7 @@
 import React from 'react'
 import './DrinkDetailsPage.css'
+import PropTypes from 'prop-types'
+
 const shortid = require('shortid')
 
 const Ingredients = ({ ingredients }) => {
@@ -14,5 +16,9 @@ const Ingredients = ({ ingredients }) => {
     </ul>
   )
 } 
+
+Ingredients.propTypes = {
+  ingredients: PropTypes.array
+}
 
 export default Ingredients

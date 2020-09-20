@@ -31,7 +31,6 @@ class RecipesPage extends Component {
   getFeaturedDrink = async (drinkName) => {
     try {
       const result = await getRecipesBySearch(drinkName)
-      console.log(result)
       this.setState({ featuredDrink: result.drinks[0] })
     } catch (error) {
       this.setState({ error: error })

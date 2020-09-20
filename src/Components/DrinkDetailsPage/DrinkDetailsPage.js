@@ -3,6 +3,7 @@ import { getIndividualDrinkDetails } from '../../APIRequests'
 import Ingredients from './Ingredients'
 import Instructions from './Instructions'
 import './DrinkDetailsPage.css'
+import PropTypes from 'prop-types'
 
 class DrinkDetailsPage extends Component {
   constructor() {
@@ -16,7 +17,7 @@ class DrinkDetailsPage extends Component {
 
   async componentDidMount() {
     try {
-      const drink = await getIndividualDrinkDetails(this.props.drinkId)
+      const drink = await getIndividualDrinkDetails(this.props.selectedDrinkId)
       this.setState({ drink: drink.drinks[0] })
     } catch (error) {
       this.setState({ error: error })
@@ -51,6 +52,7 @@ class DrinkDetailsPage extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div className="Drink-details-page">
         <div className="Drink-details-text-sec">
@@ -66,6 +68,10 @@ class DrinkDetailsPage extends Component {
       </div>
     )
   }
+}
+
+DrinkDetailsPage.propTypes = {
+  selectedDrinkId: PropTypes.number
 }
 
 export default DrinkDetailsPage
