@@ -14,8 +14,10 @@ class RecipesPage extends Component {
     this.state = {
       allDrinks: [],
       featuredDrink: {},
+      isOpen: true,
       error: ''
     }
+    this.toggleButton = this.toggleButton.bind(this)
   }
 
   async componentDidMount() {
@@ -46,15 +48,32 @@ class RecipesPage extends Component {
     }
   }
 
+  toggleButton() {
+    this.setState(prevState => {
+      return {
+          isOpen: !prevState.isOpen
+      }
+    })
+  }
+
   render() {
+    let btnTxt = this.state.isOpen ? 'close' : 'open'
+    let arrow = this.state.isOpen ? 'https://www.flaticon.com/svg/static/icons/svg/892/892555.svg' : 'https://www.flaticon.com/svg/static/icons/svg/892/892498.svg'
+
     return (
       <section className="main-section">
+        <div className="close-open-sec" onClick={this.toggleButton}>
+          <img src={arrow} alt="arrow" className="arrow"></img>
+          <p className="close-open-button">{btnTxt}</p>
+        </div>
+        {this.state.isOpen &&
         <Banner getDrinkDetails={this.props.getDrinkDetails} featuredDrink={this.state.featuredDrink} />
+        }
         <p className="find-your-favor-heading">Find Your Flavor</p>
         <p>filter by:</p>
-        <Bottles searchByIngredient={this.searchForDrinks} />
-        <ABCSearch searchByLetter={this.searchForDrinks} />
-        <Search searchByName={this.searchForDrinks} />
+        <Bottles searchForDrinks={this.searchForDrinks} />
+        <ABCSearch searchForDrinks={this.searchForDrinks} />
+        <Search searchForDrinks={this.searchForDrinks} />
         <DrinksContainer allDrinks={this.state.allDrinks} getDrinkDetails={this.props.getDrinkDetails} />
       </section>
     )
