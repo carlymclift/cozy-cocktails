@@ -8,7 +8,7 @@
   margin: 20px;
   overflow: auto;
   box-shadow: -1px 0px 21px 1px rgba(0,0,0,0.75);
-  background-color: rgb(240, 249, 255);
+  background: radial-gradient(circle, rgba(8,41,134,1) 0%, rgba(9,57,121,1) 8%, rgba(201,246,255,1) 100%)
   }
   
   #bottles {
