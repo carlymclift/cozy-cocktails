@@ -13,9 +13,6 @@ const Header = () => {
           <NavLink exact to="/" className="nav-buttons">
             Home
           </NavLink>
-          <NavLink exact to="/login" className="nav-buttons">
-            Login
-          </NavLink>
         </div>
       </nav>
     </header>
