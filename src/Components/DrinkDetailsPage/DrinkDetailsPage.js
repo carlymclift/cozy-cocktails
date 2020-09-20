@@ -39,13 +39,13 @@ class DrinkDetailsPage extends Component {
     return result
   }
 
-  putIngredientsTogether(item, measure) {
+  putIngredientsTogether(ingredient, measure) {
     let ingredients = []
-    for (let i = 0; i < item.length; i++) {
+    for (let i = 0; i < ingredient.length; i++) {
         if(!measure[i]) {
           measure.push('')
         }
-        let statement = measure[i] + item[i]
+        let statement = measure[i] + ingredient[i]
         ingredients.push(statement)
     }
     this.setState({ ingredients: ingredients })

@@ -8,7 +8,6 @@
   margin: 20px;
   overflow: auto;
   box-shadow: -1px 0px 21px 1px rgba(0,0,0,0.75);
-  /* background-color: rgba(17, 24, 32, 0.986); */
   background-color: rgb(240, 249, 255);
   }
   
@@ -36,12 +35,14 @@
   
   .absinthe {
     background-image: url(../../assets/absinthe.png);
+    height: 70% !important;
+    margin-top: 20%;
   }
   
   .tequila {
     background-image: url(../../assets/tequila.png);
-    height: 70% !important;
-    margin-top: 15%;
+    height: 65% !important;
+    margin-top: 20%;
   }
   
   .everclear {
@@ -74,6 +75,8 @@
   
   .brandy {
     background-image: url(../../assets/brandy.png);
+    height: 70% !important;
+    margin-top: 20%;
   }
   
   .champagne {
@@ -82,19 +85,17 @@
   
   .dry_vermouth {
     background-image: url(../../assets/vermouth.png);
-    height: 80% !important;
-    margin-top: 15%;
+    height: 70% !important;
+    margin-top: 20%;
   }
   
   .sweet_vermouth {
     background-image: url(../../assets/sweet_vermouth.png);
-    /* height: 75% !important;
-    margin-top: 20%; */
   }
 
   .triple_sec {
     background-image: url(../../assets/triple-sec.png);
-    height: 75% !important;
+    height: 70% !important;
     margin-top: 20%;
   }
 

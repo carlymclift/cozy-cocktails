@@ -4,7 +4,7 @@ import ABCSearch from './ABCSearch'
 import Search from './Search'
 import Banner from './Banner'
 import DrinksContainer from './DrinksContainer/DrinksContainer'
-import { getAllRecipes, getRecipesBySearch, getRecipesByLetter, getRecipesByIngredient } from '../../APIRequests'
+import { getDrinks } from '../../APIRequests'
 import './RecipesPage.css'
 import PropTypes from 'prop-types'
 
@@ -20,7 +20,7 @@ class RecipesPage extends Component {
 
   async componentDidMount() {
     try {
-      const recipes = await getAllRecipes()
+      const recipes = await getDrinks('/popular.php')
       this.setState({ allDrinks: recipes.drinks })
     } catch (error) {
       this.setState({ error: error })
@@ -30,34 +30,16 @@ class RecipesPage extends Component {
 
   getFeaturedDrink = async (drinkName) => {
     try {
-      const result = await getRecipesBySearch(drinkName)
+      const result = await getDrinks(`/search.php?s=${drinkName}`)
       this.setState({ featuredDrink: result.drinks[0] })
     } catch (error) {
       this.setState({ error: error })
     }
   }
 
-  searchByName = async (input) => {
+  searchForDrinks = async (path, search) => {
     try {
-      const results = await getRecipesBySearch(input)
-      this.setState({ allDrinks: results.drinks })
-    } catch (error) {
-      this.setState({ error: error })
-    }
-  }
-
-  searchByLetter = async (letter) => {
-    try {
-      const results = await getRecipesByLetter(letter)
-      this.setState({ allDrinks: results.drinks })
-    } catch (error) {
-      this.setState({ error: error })
-    }
-  }
-
-  searchByIngredient = async (drink) => {
-    try {
-      const results = await getRecipesByIngredient(drink)
+      const results = await getDrinks(`${path}${search}`)
       this.setState({ allDrinks: results.drinks })
     } catch (error) {
       this.setState({ error: error })
@@ -70,9 +52,9 @@ class RecipesPage extends Component {
         <Banner getDrinkDetails={this.props.getDrinkDetails} featuredDrink={this.state.featuredDrink} />
         <p className="find-your-favor-heading">Find Your Flavor</p>
         <p>filter by:</p>
-        <Bottles searchByIngredient={this.searchByIngredient} />
-        <ABCSearch searchByLetter={this.searchByLetter} />
-        <Search searchByName={this.searchByName} />
+        <Bottles searchByIngredient={this.searchForDrinks} />
+        <ABCSearch searchByLetter={this.searchForDrinks} />
+        <Search searchByName={this.searchForDrinks} />
         <DrinksContainer allDrinks={this.state.allDrinks} getDrinkDetails={this.props.getDrinkDetails} />
       </section>
     )

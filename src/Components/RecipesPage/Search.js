@@ -18,7 +18,7 @@ class Search extends Component {
 
   searchAndClearInputs(event) {
     event.preventDefault()
-    this.props.searchByName(this.state.searchInput)
+    this.props.searchForDrinks('/search.php?s=', this.state.searchInput)
     this.setState({ searchInput: '' })
   }
 
