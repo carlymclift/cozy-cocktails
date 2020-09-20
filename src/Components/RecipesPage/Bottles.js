@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 const shortid = require('shortid')
 
-const Bottles = ({ searchByIngredient }) => {
+const Bottles = ({ searchForDrinks }) => {
   let bottles = [
     'vodka', 
     'gin', 
@@ -28,8 +28,8 @@ const Bottles = ({ searchByIngredient }) => {
   const bottleButtons = bottles.map(bottle => {
       return (
         <div key={shortid.generate()}>
-          <div className={bottle} data-tip={bottle} id="bottles" role='button' onClick={() => searchByIngredient('/filter.php?i=', bottle)}></div>
-          <ReactTooltip type="light"/>
+          <div className={bottle} data-tip={bottle} id="bottles" role='button' onClick={() => searchForDrinks('/filter.php?i=', bottle)}></div>
+          <ReactTooltip type="light" className="popup"/>
         </div>
       )
   })
