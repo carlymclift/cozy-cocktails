@@ -52,7 +52,6 @@ class DrinkDetailsPage extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="Drink-details-page">
         <div className="Drink-details-text-sec">

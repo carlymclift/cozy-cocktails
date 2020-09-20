@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import RecipesPage from './Components/RecipesPage/RecipesPage'
+import RecipesPage from './HomePage/RecipesPage'
 import './App.css'
 import { Route } from 'react-router-dom'
-import Header from './Components/Header/Header'
-import Footer from './Components/Footer/Footer'
-import DrinkDetailsPage from './Components/DrinkDetailsPage/DrinkDetailsPage'
+import Header from './Header/Header'
+import Footer from './Footer/Footer'
+import DrinkDetailsPage from './DrinkDetailsPage/DrinkDetailsPage'
 
 class App extends Component {
   constructor() {

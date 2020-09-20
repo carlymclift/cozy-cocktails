@@ -1,9 +1,9 @@
 import React from 'react'
 import { render, screen, waitFor} from '@testing-library/react'
-import App from './App'
+import App from '../App'
 import { MemoryRouter } from 'react-router-dom'
 import '@testing-library/jest-dom'
-import { getAllRecipes } from './APIRequests'
+import { getAllRecipes } from '../APIRequests'
 import testData from './assets/TestData/test-data'
 import MutationObserver from '@sheerun/mutationobserver-shim'
 window.MutationObserver = MutationObserver
