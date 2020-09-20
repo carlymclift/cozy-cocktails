@@ -96,3 +96,13 @@
 .search-button {
   font: inherit;
 }
+
+.arrow-popup {
+  height: 70px;
+  width: 70px;
+  background-image: url(https://www.flaticon.com/svg/static/icons/svg/892/892628.svg);
+}
+
+#global {
+  background: none !important;
+}
