@@ -14,7 +14,6 @@ class RecipesPage extends Component {
     this.state = {
       allDrinks: [],
       featuredDrink: {},
-      isOpen: true,
       error: ''
     }
   }
