@@ -33,7 +33,7 @@ class Search extends Component {
 }
 
 Search.propTypes = {
-  searchByName: PropTypes.func
+  searchForDrinks: PropTypes.func
 }
 
 export default Search
