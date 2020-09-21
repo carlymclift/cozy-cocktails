@@ -56,11 +56,4 @@ let drinks
     const text2 = wrapper.find('p.close-open-button')
     expect(text2.text()).toBe('open')
   })
-
-  // it('Should fire a method when one of the recipes is clicked', () => {
-  //   const allRecipes = screen.getAllByRole('img', { name: /drink/i })
-  //   const clickedRecipe = allRecipes[0]
-  //   fireEvent.click(clickedRecipe)
-  //   expect(mockFun).toHaveBeenCalledWith(11000)
-  // })
 })
