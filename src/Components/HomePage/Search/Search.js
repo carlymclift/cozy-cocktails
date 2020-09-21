@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import './RecipesPage.css'
+import '../RecipesPage.css'
 
 class Search extends Component {
   constructor() {
@@ -33,7 +33,7 @@ class Search extends Component {
 }
 
 Search.propTypes = {
-  searchByName: PropTypes.func
+  searchForDrinks: PropTypes.func
 }
 
 export default Search

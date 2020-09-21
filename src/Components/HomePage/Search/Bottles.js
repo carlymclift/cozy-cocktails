@@ -42,7 +42,7 @@ const Bottles = ({ searchForDrinks }) => {
 }
 
 Bottles.propTypes = {
-  searchByIngredient: PropTypes.func
+  searchForDrinks: PropTypes.func
 }
 
 export default Bottles

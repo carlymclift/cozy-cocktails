@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Bottles from './Bottles'
-import ABCSearch from './ABCSearch'
-import Search from './Search'
+import Bottles from './Search/Bottles'
+import ABCSearch from './Search/ABCSearch'
+import Search from './Search/Search'
 import Banner from './Banner'
 import DrinksContainer from './DrinksContainer/DrinksContainer'
 import { getDrinks } from '../../APIRequests'
@@ -14,10 +14,8 @@ class RecipesPage extends Component {
     this.state = {
       allDrinks: [],
       featuredDrink: {},
-      isOpen: true,
       error: ''
     }
-    this.toggleButton = this.toggleButton.bind(this)
   }
 
   async componentDidMount() {
@@ -48,25 +46,17 @@ class RecipesPage extends Component {
     }
   }
 
-  toggleButton() {
-    this.setState(prevState => {
-      return {
-          isOpen: !prevState.isOpen
-      }
-    })
-  }
-
   render() {
-    let btnTxt = this.state.isOpen ? 'close' : 'open'
-    let arrow = this.state.isOpen ? 'https://www.flaticon.com/svg/static/icons/svg/892/892555.svg' : 'https://www.flaticon.com/svg/static/icons/svg/892/892498.svg'
+    let btnTxt = this.props.isOpen ? 'close' : 'open'
+    let arrow = this.props.isOpen ? 'https://www.flaticon.com/svg/static/icons/svg/892/892555.svg' : 'https://www.flaticon.com/svg/static/icons/svg/892/892498.svg'
 
     return (
       <section className="main-section">
-        <div className="close-open-sec" onClick={this.toggleButton}>
+        <div className="close-open-sec" role="button" onClick={this.props.toggleButton}>
           <img src={arrow} alt="arrow" className="arrow"></img>
           <p className="close-open-button">{btnTxt}</p>
         </div>
-        {this.state.isOpen &&
+        {this.props.isOpen &&
         <Banner getDrinkDetails={this.props.getDrinkDetails} featuredDrink={this.state.featuredDrink} />
         }
         <p className="find-your-favor-heading">Find Your Flavor</p>
@@ -81,7 +71,9 @@ class RecipesPage extends Component {
 }
 
 RecipesPage.propTypes = {
-  getDrinkDetails: PropTypes.func
+  getDrinkDetails: PropTypes.func,
+  toggleButton: PropTypes.func,
+  isOpen: PropTypes.bool
 }
 
 export default RecipesPage

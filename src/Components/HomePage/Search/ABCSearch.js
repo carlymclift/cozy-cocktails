@@ -1,5 +1,5 @@
 import React from 'react'
-import './RecipesPage.css'
+import '../RecipesPage.css'
 import PropTypes from 'prop-types'
 
 const shortid = require('shortid')
@@ -21,7 +21,7 @@ const ABCSearch = ({ searchForDrinks }) => {
 }
 
 ABCSearch.propTypes = {
-  searchByLetter: PropTypes.func
+  searchForDrinks: PropTypes.func
 }
 
 export default ABCSearch
