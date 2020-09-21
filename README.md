@@ -1,5 +1,3 @@
-# Cozy Cocktails
-
 <br />
 <p align="center">
   <a href="https://github.com/carlymclift/cozy-cocktails">
@@ -28,7 +26,7 @@
 
 ## About The Project
 
-- The Binary Challenge is aimed at demonstrating comprehension of React app, and how to preform asynchronous testing. I build the app Cozy Cocktails using data from [this]url('https://www.thecocktaildb.com/api.php') API. 
+- The Binary Challenge is aimed at demonstrating comprehension of React app, and how to preform asynchronous testing. I build the app Cozy Cocktails using data from [this](https://www.thecocktaildb.com/api.php) API. 
 - Cozy Cocktails shows a variety of cocktail recipes on page load. A user can search and filter drink recipes by ingredients, name, or alphabetically. When a user selects one of the recipes they are taken to a page where they can see all the ingredients and instructions for making it. 
 
 ## Plans for this app:
