@@ -1,5 +1,5 @@
 import React from 'react'
-import Enzyme, { shallow, mount } from 'enzyme'
+import Enzyme, { mount } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import { render, screen, waitFor } from '@testing-library/react'
 import DrinkDetailsPage from '../Components/DrinkDetailsPage/DrinkDetailsPage'
@@ -9,7 +9,7 @@ import { getIndividualDrinkDetails } from '../APIRequests'
 import testData from '../TestData/test-data'
 import MutationObserver from '@sheerun/mutationobserver-shim'
 window.MutationObserver = MutationObserver
-jest.mock('../APIRequests')
+jest.mock('../APIRequests') 
 
 Enzyme.configure({ adapter: new Adapter() })
 
@@ -20,12 +20,11 @@ describe('App', () => {
       <MemoryRouter>
         <DrinkDetailsPage
           selectedDrinkId={11000}
-          findIngredients={mockFun}
         />
       </MemoryRouter>
     )
     expect(screen.getByRole('img', { name: 'Drink' })).toBeInTheDocument()
-    expect(screen.getAllByRole('list')).toHaveLength(2) 
+    expect(screen.getAllByRole('list')).toHaveLength(1) 
   })
 
   it('Should fetch the drink that matches the id', () => {
@@ -34,7 +33,6 @@ describe('App', () => {
       <MemoryRouter>
         <DrinkDetailsPage
           selectedDrinkId={11000}
-          findIngredients={mockFun}
         />
       </MemoryRouter>
     )
@@ -47,18 +45,28 @@ describe('App', () => {
       <MemoryRouter>
         <DrinkDetailsPage
           selectedDrinkId={11000}
-          findIngredients={mockFun}
         />
       </MemoryRouter>
     )
     const drinkName = await waitFor( () => screen.getByText('Mojito'))
     expect(drinkName).toBeInTheDocument()
+    expect(screen.getAllByRole('list')).toHaveLength(2) 
   })
 
-  it('should call method during componentDidMount', () => {
-    const fakeFun = jest.spyOn(DrinkDetailsPage.prototype, 'findIngredients');
-    const wrapper = mount(<DrinkDetailsPage selectedDrinkId={11000} />);
-    wrapper.instance().methodName();
-    expect(fakeFun).toHaveBeenCalledTimes(1);
-});
+  it('should call findIngredients during componentDidMount', () => {
+    const fakeFun = jest.spyOn(DrinkDetailsPage.prototype, 'findIngredients')
+    const wrapper = mount(<DrinkDetailsPage />)
+    wrapper.instance().findIngredients()
+    expect(fakeFun).toHaveBeenCalledTimes(1)
+  })
+
+  it('should call putIngredientsTogether during componentDidMount', () => {
+    let ingredient = ['Light rum', 'Lime', 'sugar']
+    let measure = ['2-3 oz', 'Juice of 1', '2 tsp']
+
+    const fakeFun = jest.spyOn(DrinkDetailsPage.prototype, 'putIngredientsTogether')
+    const wrapper = mount(<DrinkDetailsPage />)
+    wrapper.instance().putIngredientsTogether(ingredient, measure)
+    expect(fakeFun).toHaveBeenCalledTimes(1)
+  })
 })
