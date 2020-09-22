@@ -43,6 +43,9 @@ Other Technologies
   - Enzyme (16.x)
   - ReactTooltip (package)
   - shortId (package)
+  
+
+View deployed app [here](https://carlymclift-cozy-cocktails.glitch.me/)
 
 ## In action:
 ![giphy1](https://user-images.githubusercontent.com/61163743/93833801-eb0aab80-fc36-11ea-9a64-e70abc44b1ca.gif)
