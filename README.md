@@ -46,7 +46,7 @@ Other Technologies
   - Glitch
   
 
-View deployed app [here](https://git.heroku.com/cozy-cocktails-deploy.git)
+View deployed app [here](https://cozy-cocktails-deploy.herokuapp.com/)
 
 ## In action:
 ![giphy1](https://user-images.githubusercontent.com/61163743/93833801-eb0aab80-fc36-11ea-9a64-e70abc44b1ca.gif)
